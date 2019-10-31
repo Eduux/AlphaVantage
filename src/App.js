@@ -6,14 +6,19 @@ import GlobalStyles from './styles/global';
 import theme from './styles/theme';
 
 import Routes from './routes';
+import Header from './components/Header';
+import { ContentWrapper } from './components/Header/styles';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
+      <ContentWrapper>
+        <BrowserRouter>
+          <Header />
+          <Routes />
+        </BrowserRouter>
+      </ContentWrapper>
     </ThemeProvider>
   );
 }

@@ -1,7 +1,34 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
+
+  html, body, #root {
+    min-height: 100%;
+  }
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    outline-color: ${(props) => props.theme.colors.outlineColor};
+  }
+
   body {
-    background-color: ${(props) => props.theme.colors.backgroundColor}
+    font-family: ${(props) => props.theme.colors.fontFamily};
+    background-color: ${(props) => props.theme.colors.backgroundColor};
+    color: white;
+    font-size: 16px;
+    outline-color: ${(props) => props.theme.colors.outlineColor};
+    -webkit-font-smoothing: antialiased!important;
+    text-rendering: optimizeLegibility!important;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  button {
+    cursor: pointer;
   }
 `;

@@ -8,7 +8,7 @@ export default function CompanyList({ list }) {
   return (
     <CompanyContainer>
       {list.map((item) => (
-        <Company key={item['1. symbol']} data-testid={item['1. symbol']}>
+        <Company key={item['1. symbol']}>
           <Link to={{ pathname: `/company/${item['1. symbol']}` }}>
             <CompanyItem>
               <p>

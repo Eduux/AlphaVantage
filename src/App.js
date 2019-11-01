@@ -13,12 +13,12 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <ContentWrapper>
-        <BrowserRouter>
-          <Header />
+      <BrowserRouter>
+        <Header />
+        <ContentWrapper>
           <Routes />
-        </BrowserRouter>
-      </ContentWrapper>
+        </ContentWrapper>
+      </BrowserRouter>
     </ThemeProvider>
   );
 }

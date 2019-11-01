@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { mount } from 'enzyme';
 
-import Component from './index';
+import Component from '../../components/NotFound';
 
-describe('Header component', () => {
+describe('Not found component', () => {
   it('should be render.', () => {
     const MakeContainerWrapper = Component;
     const wrapper = mount(

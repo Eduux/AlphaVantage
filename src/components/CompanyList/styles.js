@@ -13,6 +13,10 @@ export const Company = styled.div`
   padding: 0 15px;
   cursor: pointer;
 
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
   a {
     color: inherit;
   }

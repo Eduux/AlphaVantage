@@ -1,12 +1,13 @@
 import React, { useState, useCallback } from 'react';
 import { FaSearch, FaSpinner } from 'react-icons/fa';
 
+import { ajustKeys } from '../../helpers/ObjectBuilder';
 import api from '../../services/api';
 
 import HeaderSection from '../../components/HeaderSection';
 import CompanyList from '../../components/CompanyList';
 
-import { Container, Form, SubmitButton } from './styles';
+import { Container, Form, SubmitButton } from '../../styles/mixins';
 
 export default function Home() {
   const [company, setNewCompany] = useState('');
@@ -26,7 +27,7 @@ export default function Home() {
 
         setNewCompany('');
         setLoading(0);
-        setCompanies(data);
+        setCompanies(ajustKeys(data.bestMatches));
       }
     },
     [company, loading],
@@ -53,7 +54,7 @@ export default function Home() {
         </Form>
       </Container>
 
-      {companies.bestMatches && <CompanyList list={companies.bestMatches} />}
+      {companies && <CompanyList list={companies} />}
     </>
   );
 }

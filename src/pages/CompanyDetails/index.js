@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
+import { ajustKeys } from '../../helpers/ObjectBuilder';
 import api from '../../services/api';
 
 import NotFound from '../../components/NotFound';
@@ -15,10 +16,10 @@ export default function CompanyDetails(props) {
   useEffect(() => {
     const { match } = props;
     const fetchData = async () => {
-      const response = await api.get(
+      const { data } = await api.get(
         `?function=TIME_SERIES_DAILY&symbol=${match.params.id}`,
       );
-      setCompanyDailyPrices(response);
+      setCompanyDailyPrices(ajustKeys(data));
       setLoading(0);
     };
     fetchData();
@@ -26,19 +27,27 @@ export default function CompanyDetails(props) {
 
   return (
     <>
-      <HeaderSection
-        text="Daily Prices (open, high, low, close) and Volumes"
-        back
-      />
       {loading ? (
         <Loading />
-      ) : companyDailyPrices.data['Time Series (Daily)'] ? (
-        <DailyPrices
-          metaData={companyDailyPrices.data['Meta Data']}
-          prices={companyDailyPrices.data['Time Series (Daily)']}
-        />
+      ) : companyDailyPrices['TimeSeries(Daily)'] ? (
+        <>
+          <HeaderSection
+            text={`${companyDailyPrices.MetaData.Symbol} Daily Prices`}
+            pathPage="/"
+          />
+          <DailyPrices
+            symbol={companyDailyPrices.MetaData.Symbol}
+            prices={companyDailyPrices['TimeSeries(Daily)']}
+          />
+        </>
       ) : (
-        <NotFound />
+        <>
+          <HeaderSection
+            text="Daily Prices (open, high, low, close) and Volumes"
+            pathPage="/"
+          />
+          <NotFound />
+        </>
       )}
     </>
   );

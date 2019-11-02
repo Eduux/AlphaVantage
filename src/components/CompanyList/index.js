@@ -8,14 +8,14 @@ export default function CompanyList({ list }) {
   return (
     <CompanyContainer>
       {list.map((item) => (
-        <Company key={item['1. symbol']}>
-          <Link to={{ pathname: `/company/${item['1. symbol']}` }}>
+        <Company key={item.symbol}>
+          <Link to={{ pathname: `/company/${item.symbol}` }}>
             <CompanyItem>
               <p>
-                <strong>{item['2. name']}</strong>
+                <strong>{item.name}</strong>
               </p>
-              <p>{item['4. region']}</p>
-              <p>{item['8. currency']}</p>
+              <p>{item.region}</p>
+              <p>{item.currency}</p>
             </CompanyItem>
           </Link>
         </Company>

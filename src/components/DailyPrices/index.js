@@ -1,90 +1,70 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 import DatePicker from 'react-datepicker';
+import PriceList from '../PriceList';
+import { formatDateFilter } from '../../helpers/FormatDate';
 
 import 'react-datepicker/dist/react-datepicker.css';
-import moment from 'moment';
 
-import {
-  DataContainer,
-  FilterDateContainer,
-  FilterDateForm,
-  PriceContainer,
-  Price,
-  PriceItem,
-} from './styles';
+import { FilterDateForm } from './styles';
+import { SubmitButton, Form, Container } from '../../styles/mixins';
 
-export default function DailyPrices({ metaData, prices }) {
-  const [initialDate, setInitialDate] = useState(new Date());
-  const [finalDate, setFinalDate] = useState(new Date());
+export default function DailyPrices({ prices, symbol }) {
+  const [initialDate, setInitialDate] = useState();
+  const [finalDate, setFinalDate] = useState();
   const pricesData = Object.entries(prices);
-  const [pricesFilter, setPricesFilter] = useState(Object.entries(prices));
-  useEffect(() => {
-    setPricesFilter(
-      pricesData.filter((item) => item[0] >= initialDate && item[0] <= finalDate),
-    );
-  }, [initialDate, finalDate]);
+  const [pricesFilter, setPricesFilter] = useState(pricesData);
+
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      if (initialDate && finalDate) {
+        setPricesFilter(
+          pricesData.filter(
+            (item) => item[0] >= formatDateFilter(initialDate)
+              && item[0] <= formatDateFilter(finalDate),
+          ),
+        );
+      }
+    },
+    [initialDate, finalDate, pricesData],
+  );
 
   return (
     <>
-      <DataContainer>
-        <FilterDateContainer>
-          <p>
-            <span>Company Symbol:</span>
-            {metaData['2. Symbol']}
-          </p>
-          <p>
-            <span>Last Refreshed:</span>
-            {moment(metaData['3. Last Refreshed']).format('DD/MM/YYYY HH:mm')}
-          </p>
-          <p>Filter date:</p>
+      <Container>
+        <Form onSubmit={handleSubmit}>
           <FilterDateForm>
+            <p>Time period:</p>
             <DatePicker
               selected={initialDate}
+              dateFormat="dd/MM/yyyy"
               onChange={(value) => setInitialDate(value)}
+              placeholderText="Start date"
             />
             <DatePicker
               selected={finalDate}
+              dateFormat="dd/MM/yyyy"
               onChange={(value) => setFinalDate(value)}
+              placeholderText="End Date"
             />
           </FilterDateForm>
-        </FilterDateContainer>
-      </DataContainer>
+          <SubmitButton>Apply</SubmitButton>
+        </Form>
+      </Container>
 
-      <PriceContainer>
-        {pricesFilter.map(([key, value]) => (
-          <Price key={key}>
-            <PriceItem>
-              <h1>{moment(key).format('DD/MM/YYYY')}</h1>
-              <p>
-                <span>Open: </span>
-                {value['1. open']}
-              </p>
-              <p>
-                <span>High: </span>
-                {value['2. high']}
-              </p>
-              <p>
-                <span>Low: </span>
-                {value['3. low']}
-              </p>
-              <p>
-                <span>Close: </span>
-                {value['4. close']}
-              </p>
-              <p>
-                <span>Volume: </span>
-                {value['5. volume']}
-              </p>
-            </PriceItem>
-          </Price>
-        ))}
-      </PriceContainer>
+      {pricesFilter.length > 0 && (
+        <Link to={{ pathname: `/company-plot/${symbol}` }}>
+          <PriceList list={pricesFilter} />
+        </Link>
+      )}
     </>
   );
 }
 
 DailyPrices.propTypes = {
   prices: PropTypes.any.isRequired,
-  metaData: PropTypes.any.isRequired,
+  symbol: PropTypes.string.isRequired,
 };

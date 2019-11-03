@@ -7,6 +7,7 @@ import { ajustKeys } from '../../helpers/ObjectBuilder';
 
 import NotFound from '../../components/NotFound';
 import Loading from '../../components/Loading';
+import GraphicPlot from '../../components/GraphicPlot';
 
 export default function CompanyGraphic(props) {
   const [loading, setLoading] = useState(1);
@@ -32,7 +33,7 @@ export default function CompanyGraphic(props) {
             text={`${compantPlot.MetaData.Symbol} Intraday (5 min) plot`}
             pathPage={`/company/${compantPlot.MetaData.Symbol}`}
           />
-          <p>Oi</p>
+          <GraphicPlot data={compantPlot['Time Series (min)']} />
         </>
       ) : (
         <>

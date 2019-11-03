@@ -7,3 +7,7 @@ export function formatDateFilter(date) {
 export function formatDateRender(date) {
   return moment(date).format('DD/MM/YYYY');
 }
+
+export function formatDateTimeRender(date) {
+  return moment(date).format('DD/MM/YYYY hh:MM:mm');
+}

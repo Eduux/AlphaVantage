@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/AlphaVantage/precache-manifest.39573ccb05d7ee19d20f6b2cfce0a4dd.js"
+  "/AlphaVantage/precache-manifest.d6e86eb96feb0ed76233923a02ad8243.js"
 );
 
 self.addEventListener('message', (event) => {

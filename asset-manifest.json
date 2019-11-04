@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/AlphaVantage/static/js/main.695ad9e2.chunk.js",
-    "main.js.map": "/AlphaVantage/static/js/main.695ad9e2.chunk.js.map",
+    "main.js": "/AlphaVantage/static/js/main.ed92dcee.chunk.js",
+    "main.js.map": "/AlphaVantage/static/js/main.ed92dcee.chunk.js.map",
     "runtime-main.js": "/AlphaVantage/static/js/runtime-main.5ad70685.js",
     "runtime-main.js.map": "/AlphaVantage/static/js/runtime-main.5ad70685.js.map",
     "static/css/2.ff9ea1f9.chunk.css": "/AlphaVantage/static/css/2.ff9ea1f9.chunk.css",
-    "static/js/2.c2ed8a7b.chunk.js": "/AlphaVantage/static/js/2.c2ed8a7b.chunk.js",
-    "static/js/2.c2ed8a7b.chunk.js.map": "/AlphaVantage/static/js/2.c2ed8a7b.chunk.js.map",
+    "static/js/2.b61bb95a.chunk.js": "/AlphaVantage/static/js/2.b61bb95a.chunk.js",
+    "static/js/2.b61bb95a.chunk.js.map": "/AlphaVantage/static/js/2.b61bb95a.chunk.js.map",
     "index.html": "/AlphaVantage/index.html",
-    "precache-manifest.3c7ede527a29d8a081c7d0132df58309.js": "/AlphaVantage/precache-manifest.3c7ede527a29d8a081c7d0132df58309.js",
+    "precache-manifest.2da78a5f9702345517fab0ca3042a2aa.js": "/AlphaVantage/precache-manifest.2da78a5f9702345517fab0ca3042a2aa.js",
     "service-worker.js": "/AlphaVantage/service-worker.js",
     "static/css/2.ff9ea1f9.chunk.css.map": "/AlphaVantage/static/css/2.ff9ea1f9.chunk.css.map",
     "static/media/bank.svg": "/AlphaVantage/static/media/bank.f2fc0a55.svg",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.5ad70685.js",
     "static/css/2.ff9ea1f9.chunk.css",
-    "static/js/2.c2ed8a7b.chunk.js",
-    "static/js/main.695ad9e2.chunk.js"
+    "static/js/2.b61bb95a.chunk.js",
+    "static/js/main.ed92dcee.chunk.js"
   ]
 }

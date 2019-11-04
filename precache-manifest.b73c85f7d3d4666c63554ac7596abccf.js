@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7cfac50927265451376e5cb63bcf8d26",
+    "revision": "ac6609e050f06792854a75d4c09d7e29",
     "url": "/AlphaVantage/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/AlphaVantage/static/js/2.c2ed8a7b.chunk.js"
   },
   {
-    "revision": "5b3e8740f8bb6758e0a2",
-    "url": "/AlphaVantage/static/js/main.57e6935b.chunk.js"
+    "revision": "6fb3586863cf180be5ae",
+    "url": "/AlphaVantage/static/js/main.e38548b6.chunk.js"
   },
   {
     "revision": "ec5c98d6b50698eff009",

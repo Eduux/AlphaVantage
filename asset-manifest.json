@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/AlphaVantage/static/js/main.bca2b784.chunk.js",
-    "main.js.map": "/AlphaVantage/static/js/main.bca2b784.chunk.js.map",
+    "main.js": "/AlphaVantage/static/js/main.c28cebdf.chunk.js",
+    "main.js.map": "/AlphaVantage/static/js/main.c28cebdf.chunk.js.map",
     "runtime-main.js": "/AlphaVantage/static/js/runtime-main.5ad70685.js",
     "runtime-main.js.map": "/AlphaVantage/static/js/runtime-main.5ad70685.js.map",
     "static/css/2.ff9ea1f9.chunk.css": "/AlphaVantage/static/css/2.ff9ea1f9.chunk.css",
     "static/js/2.c2ed8a7b.chunk.js": "/AlphaVantage/static/js/2.c2ed8a7b.chunk.js",
     "static/js/2.c2ed8a7b.chunk.js.map": "/AlphaVantage/static/js/2.c2ed8a7b.chunk.js.map",
     "index.html": "/AlphaVantage/index.html",
-    "precache-manifest.83adb9247a6b0d0e6d361e097ddaf1b3.js": "/AlphaVantage/precache-manifest.83adb9247a6b0d0e6d361e097ddaf1b3.js",
+    "precache-manifest.70bb0d918531fa231780530593c8d2d2.js": "/AlphaVantage/precache-manifest.70bb0d918531fa231780530593c8d2d2.js",
     "service-worker.js": "/AlphaVantage/service-worker.js",
     "static/css/2.ff9ea1f9.chunk.css.map": "/AlphaVantage/static/css/2.ff9ea1f9.chunk.css.map",
     "static/media/bank.svg": "/AlphaVantage/static/media/bank.f2fc0a55.svg",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.5ad70685.js",
     "static/css/2.ff9ea1f9.chunk.css",
     "static/js/2.c2ed8a7b.chunk.js",
-    "static/js/main.bca2b784.chunk.js"
+    "static/js/main.c28cebdf.chunk.js"
   ]
 }

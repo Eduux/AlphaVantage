@@ -13,15 +13,16 @@ export default function CompanyDetails(props) {
   const [loading, setLoading] = useState(1);
   const [companyDailyPrices, setCompanyDailyPrices] = useState([]);
 
+  const { match } = props;
+  const fetchData = async () => {
+    const { data } = await api.get(
+      `?function=TIME_SERIES_DAILY&symbol=${match.params.id}`,
+    );
+    setCompanyDailyPrices(ajustKeys(data));
+    setLoading(0);
+  };
+
   useEffect(() => {
-    const { match } = props;
-    const fetchData = async () => {
-      const { data } = await api.get(
-        `?function=TIME_SERIES_DAILY&symbol=${match.params.id}`,
-      );
-      setCompanyDailyPrices(ajustKeys(data));
-      setLoading(0);
-    };
     fetchData();
   }, [props]);
 

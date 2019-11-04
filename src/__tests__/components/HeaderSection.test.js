@@ -20,7 +20,7 @@ describe('Header Section component', () => {
   it('should be render back', () => {
     const wrapper = mount(
       <BrowserRouter>
-        <Component text="Teste" back />
+        <Component text="Teste" pathPage="/" />
       </BrowserRouter>,
     );
 

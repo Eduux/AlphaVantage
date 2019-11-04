@@ -1,9 +1,9 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import Component from '../../components/NotFound';
+import Component from '../../components/Loading';
 
-describe('Not found component', () => {
+describe('Loading component', () => {
   it('should be render.', () => {
     const wrapper = mount(<Component />);
 

@@ -12,15 +12,17 @@ import GraphicPlot from '../../components/GraphicPlot';
 export default function CompanyGraphic(props) {
   const [loading, setLoading] = useState(1);
   const [compantPlot, setCompantPlot] = useState([]);
+  const { match } = props;
+
+  const fetchData = async () => {
+    const { data } = await api.get(
+      `?function=TIME_SERIES_INTRADAY&&interval=5min&symbol=${match.params.id}`,
+    );
+    setLoading(0);
+    setCompantPlot(ajustKeys(data));
+  };
+
   useEffect(() => {
-    const { match } = props;
-    const fetchData = async () => {
-      const { data } = await api.get(
-        `?function=TIME_SERIES_INTRADAY&&interval=5min&symbol=${match.params.id}`,
-      );
-      setLoading(0);
-      setCompantPlot(ajustKeys(data));
-    };
     fetchData();
   }, [props]);
   return (

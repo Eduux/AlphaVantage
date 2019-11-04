@@ -42,7 +42,8 @@
   "jest": {
     "collectCoverageFrom": [
       "src/components/*/*.js",
-      "src/pages/*/*.js"
+      "src/pages/*/*.js",
+      "src/helpers/*/*.js"
     ]
   },
   "devDependencies": {

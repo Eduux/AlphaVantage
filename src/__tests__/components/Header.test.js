@@ -6,10 +6,9 @@ import Component from '../../components/Header';
 
 describe('Header component', () => {
   it('should be render.', () => {
-    const MakeContainerWrapper = Component;
     const wrapper = mount(
       <BrowserRouter>
-        <MakeContainerWrapper />
+        <Component />
       </BrowserRouter>,
     );
 
